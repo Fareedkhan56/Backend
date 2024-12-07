@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+    <div class="main min-h-screen w-full flex flex-col items-center p-4">
+        <div class="form w-full bg-zinc-800 p-4 rounded">
+            <h2 class="text-xl font-bold mb-4">Add a Task</h2>
+            <form action="/create" method="post" class="space-y-4">
+                <div>
+                    <label for="task" class="block mb-1 text-sm">Task Title</label>
+                    <input id="task" name="task" type="text" placeholder="Enter task"
+                        class="w-full p-2 rounded bg-zinc-700 border border-zinc-600 outline-none" />
+                </div>
+                <div>
+                    <label for="description" class="block mb-1 text-sm">Task Description</label>
+                    <textarea id="description" name="description" placeholder="Enter task description"
+                        class="w-full p-2 rounded bg-zinc-700 border border-zinc-600 outline-none resize-none"></textarea>
+                </div>
+                <button type="submit" class="px-4 py-2 bg-green-500 rounded hover:bg-green-600 transition">
+                    Add Task
+                </button>
+            </form>
+        </div>
+
+        <div class="task-list w-full bg-zinc-800 p-4 rounded mt-6">
+            <h2 class="text-xl font-bold mb-4">Tasks</h2>
+            <div class="tasks flex flex-wrap">
+                <% if (file.length> 0) { %>
+                    <% file.forEach((val)=> { %>
+                        <div class="task w-72 px-3 py-4 m-2 rounded bg-zinc-700">
+                            <h1 class="font-bold text-xl text-green-400">
+                                <%= val %>
+                            </h1>
+                            <div class="actions flex justify-between items-center mt-4">
+                                <a href="/files/<%= val %>" class="text-blue-600 text-sm hover:underline">Check Task</a>
+                                <a href="/edit/<%= val %>" class="text-zinc-400 text-sm hover:underline">Edit File Name</a>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <h3 class="text-zinc-600">No tasks yet.</h3>
+                                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
