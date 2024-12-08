@@ -10,19 +10,15 @@
 
 <body>
     <div class="w-full h-screen bg-zinc-900 text-white p-10">
-        <a href="/login" class="text-sm text-blue-600 tracking-tighter">Already Have an Account ?</a>
-        <h3 class="text-3xl tracking-tighter my-6">Create Account</h3>
-        <form action="/create" method="post">
-            <input class="px-3 py-2 rounded-md outline-none bg-transparent border-2 border-zinc-800 mr-2" type="text"
-                name="userName" placeholder="Enter Name" id="">
+        <a href="/" class="text-sm text-blue-600 tracking-tighter">Want to Create Account ?</a>
+        <h3 class="text-3xl tracking-tighter my-6">Login your Account</h3>
+        <form action="/login" method="post">
             <input class="px-3 py-2 rounded-md outline-none bg-transparent border-2 border-zinc-800 mr-2" type="email"
                 name="userEmail" placeholder="Enter Email" id="">
             <input class="px-3 py-2 rounded-md outline-none bg-transparent border-2 border-zinc-800 mr-2"
                 type="password" name="userPassword" placeholder="Enter Password" id="">
-            <input class="px-3 py-2 rounded-md outline-none bg-transparent border-2 border-zinc-800 mr-2" type="number"
-                name="userAge" placeholder="Enter Age" id="">
             <input class="px-4 py-2 bg-blue-800 cursor-pointer rounded-md hover:bg-blue-900" type="submit"
-                value="Create User">
+                value="Login">
         </form>
     </div>
 </body>
